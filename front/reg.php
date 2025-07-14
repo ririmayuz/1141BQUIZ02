@@ -11,7 +11,7 @@
             </td>
         </tr>
         <tr>
-            <td>Step2:登入密碼  </td>
+            <td>Step2:登入密碼</td>
             <td>
                 <input type="password" name="pw" id="pw">
             </td>
