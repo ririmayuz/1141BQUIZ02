@@ -54,6 +54,8 @@ function reg(){
                 alert("帳號重複")
             }else{
                 $.post("./api/reg.php",data,(res)=>{
+                    console.log(res);
+                    
                     if(parseInt(res)){
                         alert("註冊成功，歡迎加入")
                         location.href="?do=login";
