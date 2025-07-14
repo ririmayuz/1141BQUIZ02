@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<title>健康促進網</title>
-	<link href="./home_files/css.css" rel="stylesheet" type="text/css">
+	<link href="./css/css.css" rel="stylesheet" type="text/css">
 	<script src="./home_files/jquery-1.9.1.min.js"></script>
 	<script src="./home_files/js.js"></script>
 </head>
@@ -46,7 +46,7 @@
 		<div id="bottom">
 			本網站建議使用：IE9.0以上版本，1024 x 768 pixels 以上觀賞瀏覽 ， Copyright © 2012健康促進網社群平台 All Right Reserved
 			<br>
-			服務信箱：health@test.labor.gov.tw<img src="./home_files/02B02.jpg" width="45">
+			服務信箱：health@test.labor.gov.tw<img src="./icon/02B02.jpg" width="45">
 		</div>
 	</div>
 
