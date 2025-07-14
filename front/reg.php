@@ -13,13 +13,13 @@
         <tr>
             <td>Step2:登入密碼  </td>
             <td>
-                <input type="text" name="pw" id="pw">
+                <input type="password" name="pw" id="pw">
             </td>
         </tr>
         <tr>
             <td>Step3:再次確認密碼</td>
             <td>
-                <input type="text" name="pw2" id="pw2">
+                <input type="password" name="pw2" id="pw2">
             </td>
         </tr>
         <tr>
