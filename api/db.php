@@ -9,7 +9,7 @@ function dd($array){
 }
 
 function q($sql){
-    $dsn='mysql:host=localhost;dbname=db09;charset=utf8';
+    $dsn='mysql:host=localhost;dbname=db18;charset=utf8';
     $pdo=new PDO($dsn,'root','');
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -19,7 +19,7 @@ function to($url){
 }
 
 class DB{
-private $dsn="mysql:host=localhost;dbname=db09;charset=utf8";
+private $dsn="mysql:host=localhost;dbname=db18;charset=utf8";
 private $pdo;   
 private $table;
 
@@ -123,22 +123,22 @@ private function arraytosql($array){
 }
 
 
-$Title=new DB('title');
-$Ad=new DB('ad');
-$Mvim=new DB('mvim');
-$Image=new DB('image');
-$News=new DB('news');
-$Admin=new DB('admin');
-$Menu=new DB('menu');
-$Total=new DB('total');
-$Bottom=new DB('bottom');
+$User=new DB('users');
 
-if(!isset($_SESSION['visit'])){
-    //第一次來訪
-    $t=$Total->find(1);
-    $t['total']++;
-    $Total->save($t);
-    $_SESSION['visit']=1;
-}
+
+$User->save(['acc'=>'test','pw'=>'5678','email'=>'test@labor.gov.tw']);
+$User->save(['acc'=>'mem01','pw'=>'mem01','email'=>'mem01@labor.gov.tw']);
+$User->save(['acc'=>'mem02','pw'=>'mem02','email'=>'mem02@labor.gov.tw']);
+
+
+
+
+// if(!isset($_SESSION['visit'])){
+//     //第一次來訪
+//     $t=$Total->find(1);
+//     $t['total']++;
+//     $Total->save($t);
+//     $_SESSION['visit']=1;
+// }
 
 ?>
