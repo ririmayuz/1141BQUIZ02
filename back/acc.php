@@ -1,5 +1,35 @@
 <fieldset>
-    <legend>會員註冊</legend>
+    <legend>帳號管理</legend>
+    <form action="./api/del_acc.php" method="post">
+        <table style="width: 70%; margin:auto;">
+            <tr class="ct">
+                <td>帳號</td>
+                <td>密碼</td>
+                <td>刪除</td>
+            </tr>
+            <?php
+            $row=$User->all();
+            foreach($row as $row):
+                // if($row['acc']!='admin'):
+            ?>
+            <tr class="ct">
+                <td><?=$row['acc'];?></td>
+                <td><?=str_repeat("*",strlen($row['pw']));?></td>
+                <td>
+                    <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
+                </td>
+            </tr>
+            <?php
+            // endif;
+            endforeach;
+            ?>
+        </table>
+        <div class="ct">
+            <input type="submit" value="確認刪除">
+            <input type="reset" value="清空選取">
+        </div>
+    </form>
+    <h1>新增會員</h1>
     <form>
         <div class="ct" style="color:red">請設定您要註冊的帳號及密碼(最長12個字元)</div>
         <table>
@@ -33,8 +63,10 @@
                 <td></td>
             </tr>
         </table>
-    </form>
+        <div id="answer"></div>
+    </form>        
 </fieldset>
+
 <script>
     function reg() {
         let data = {
@@ -54,14 +86,7 @@
                     alert("帳號重複")
                 } else {
                     $.post("./api/reg.php", data, (res) => {
-                        console.log(res);
-
-                        if (parseInt(res)) {
-                            alert("註冊成功，歡迎加入")
-                            location.href = "?do=login";
-                        } else {
-                            alert("註冊失敗，請稍後再試")
-                        }
+                     
                     })
                 }
             })
