@@ -13,44 +13,48 @@
     <legend>文章列表</legend>
     <div id="TypeList"></div>
     <div id="Post"></div>
-    
+
 </fieldset>
 <script>
-getList(1);
+    getList(1);
 
-$(".type-link").on("click",function(){
-    let type=$(this).text();
-    $("#NavType").text(type);
-    let typeId=$(this).data("type");
-    getList(typeId);
-})
+    $(".type-link").on("click", function() {
+        let type = $(this).text();
+        $("#NavType").text(type);
+        let typeId = $(this).data("type");
+        getList(typeId);
+    })
 
-function getPost(id){
-    $.get("./api/get_post.php",{id},function(post){
+    function getPost(id) {
+        $.get("./api/get_post.php", {
+            id
+        }, function(post) {
             $("#TypeList").html("");
             $("#Post").html(post);
         })
-}
+    }
 
 
-$(".post-item").on("click",function(){
-    let postId=$(this).data("post");
-    getPost(postId);    
-})
-
-
-function getList(type){
-    $.get("api/get_type_list.php",{type},function(list){
-        $("#Post").html("");
-        $("#TypeList").html(list);
-        //console.log('list');
-        $(".post-item").on("click",function(){
-          //  console.log('post-item');
-                // 取得文章ID   
-          let postId=$(this).data("post");
-                
-                getPost(postId);    
-        })
+    $(".post-item").on("click", function() {
+        let postId = $(this).data("post");
+        getPost(postId);
     })
-}
+
+
+    function getList(type) {
+        $.get("api/get_type_list.php", {
+            type
+        }, function(list) {
+            $("#Post").html("");
+            $("#TypeList").html(list);
+            //console.log('list');
+            $(".post-item").on("click", function() {
+                //  console.log('post-item');
+                // 取得文章ID   
+                let postId = $(this).data("post");
+
+                getPost(postId);
+            })
+        })
+    }
 </script>

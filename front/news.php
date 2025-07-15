@@ -1,7 +1,16 @@
 <div class="nav" style="margin-bottom:20px;">
-    目前位置：首頁 > 最新文章區 >
+    目前位置：首頁 > 最新文章區 
 </div>
-
+<style>
+    .title{
+        cursor: pointer;
+        color: blue;
+    }
+    .title:hover{
+        text-decoration: underline;
+        color: green;
+    }
+</style>
 <table style="width: 95%; margin:auto;">
     <tr class="ct">
         <td width="20%">標題</td>
@@ -11,7 +20,7 @@
     <?php
     
      $total = $News->count();
-        $div = 3;
+        $div = 5;
         $pages = ceil($total / $div);
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;
@@ -20,10 +29,10 @@
     
     ?>
     <tr>
-        <td><?=$row['title'];?></td>
+        <td class='title'><?=$row['title'];?></td>
         <td>
             <div class="short"><?=mb_substr($row['text'],0,30);?>...</div>
-            <div class="all"></div>
+            <div class="all" style="display: none;"><?=nl2br($row['text']);?></div>
 
         </td>
         <td></td>
@@ -53,3 +62,9 @@
 
 
     </div>
+
+    <script>
+        $("title").on("click",function(){
+            $(this).next().find(".short,.all").toggle();
+        })
+    </script>
