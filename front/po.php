@@ -28,7 +28,7 @@ $(".type-link").on("click",function(){
 function getPost(id){
     $.get("./api/get_post.php",{id},function(post){
             $("#TypeList").html("");
-            $("#Post").html(post)
+            $("#Post").html(post);
         })
 }
 
