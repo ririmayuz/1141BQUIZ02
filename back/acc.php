@@ -8,17 +8,17 @@
                 <td>刪除</td>
             </tr>
             <?php
-            $row=$User->all();
-            foreach($row as $row):
+            $row = $User->all();
+            foreach ($row as $row):
                 // if($row['acc']!='admin'):
             ?>
-            <tr class="ct">
-                <td><?=$row['acc'];?></td>
-                <td><?=str_repeat("*",strlen($row['pw']));?></td>
-                <td>
-                    <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
-                </td>
-            </tr>
+                <tr class="ct">
+                    <td><?= $row['acc']; ?></td>
+                    <td><?= str_repeat("*", strlen($row['pw'])); ?></td>
+                    <td>
+                        <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                    </td>
+                </tr>
             <?php
             // endif;
             endforeach;
@@ -64,7 +64,7 @@
             </tr>
         </table>
         <div id="answer"></div>
-    </form>        
+    </form>
 </fieldset>
 
 <script>
@@ -86,7 +86,12 @@
                     alert("帳號重複")
                 } else {
                     $.post("./api/reg.php", data, (res) => {
-                     
+                        if (parseInt(res)) {
+                            $("#answer").html("註冊成功！").css("color", "green");
+                            $("#acc, #pw, #pw2, #email").val(''); // 清空表單
+                        } else {
+                            $("#answer").html("註冊失敗，請稍後再試").css("color", "red");
+                        }
                     })
                 }
             })
