@@ -33,7 +33,14 @@
                 <div class="short"><?= mb_substr($row['text'], 0, 30); ?>...</div>
                 <div class="all" style='display:none'><?= nl2br($row['text']); ?></div>
             </td>
-            <td></td>
+            <td>
+                <?php
+                if(isset($_SESSION['login'])):
+                ?>
+                <a href="">讚</a>
+                <?php
+                endif;
+                ?>
         </tr>
     <?php
     endforeach;

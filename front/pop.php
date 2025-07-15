@@ -53,7 +53,17 @@
                 </div>
 
             </td>
-            <td></td>
+            <td>
+                <span>3</span>個人說
+                <img src="./images/02B03.jpg" style="width: 18px;">
+                <?php
+                if(isset($_SESSION['login'])):
+                ?>
+                <a href=""></a>
+                <?php
+                endif;
+                ?>
+            </td>
         </tr>
 
     <?php
