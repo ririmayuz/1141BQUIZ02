@@ -2,6 +2,13 @@
 session_start();
 date_default_timezone_set("Asia/Taipei");
 
+$Type=[
+1=>'健康新知',
+2=>'菸害防治',
+3=>'癌症防治',
+4=>'慢性病防治'
+];
+
 function dd($array){
     echo "<pre>";
     print_r($array);

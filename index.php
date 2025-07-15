@@ -59,7 +59,7 @@
 
 						?>
 					</span>
-					<div class="">
+					<div class="content">
 						<?php
 						$do = $_GET['do'] ?? 'main';
 						$file = "./front/" . $do . ".php";
