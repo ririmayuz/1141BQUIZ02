@@ -1,36 +1,47 @@
 <style>
-.tabs {
-    display: flex;
-    margin-left: 1px;
-}
+    .tabs {
+        display: flex;
+        margin-left: 1px;
+    }
 
-.tab {
-    width: 100px;
-    text-align: center;
-    padding: 5px 10px;
-    border: 1px solid black;
-    margin-left: -1px;
-}
+    .tab {
+        width: 100px;
+        text-align: center;
+        padding: 5px 10px;
+        border: 1px solid black;
+        margin-left: -1px;
+        background-color: #eee;
+    }
 
-.post {
-    width: 90%;
-    padding: 10px;
-    height: 400px;
-    border: 1px solid black;
-    overflow: auto;
-}
+    .tab.active {
+        background-color: white;
+        border-bottom: 1px solid white;
+    }
+
+    .post {
+        width: 95%;
+        padding: 10px;
+        height: 430px;
+        border: 1px solid black;
+        overflow: auto;
+        display: none;
+        margin-top: -1px;
+    }
+
+    .post.active {
+        display: block;
+    }
 </style>
 
 
 <div class="tabs">
-    <div class="tab" id='tab1'>健康新知</div>
+    <div class="tab active" id='tab1'>健康新知</div>
     <div class="tab" id='tab2'>菸害防治</div>
     <div class="tab" id='tab3'>癌症防治</div>
     <div class="tab" id='tab4'>慢性病防治</div>
 </div>
-
 <div class="posts">
-    <div class="post" id='post1'>
+    <div class="post active" id='post1'>
         <h2>健康新知</h2>
         <pre>
 缺乏運動已成為影響全球死亡率的第四大危險因子-國人無規律運動之比率高達72.2%
@@ -49,7 +60,7 @@
 5. 假日可以自己動手整理家裡、擦擦地板，也可以增加運動量!或利用掃地、拖地時加大動作幅度，那也是很好的身體活動。
 6. 在家裡、辦公室附近找方便的資源運動，包括公園、職場辦的課程、活動。
 7. 減少看電視、打電玩等靜態生活的時間。
-    民眾對運動如有疑問，可參考國民健康局肥胖防治網-「快樂動」(http://obesity.bhp.gov.tw)，亦可撥打免費市話健康體重管理電話諮詢服務，諮詢專線「0800-367-100（0800-瘦落去-要動動）」，也可利用國民健康局局網首頁或肥胖防治網問題諮詢專區的網路電話撥入功能，向客服人員諮詢關於運動、健康飲食及健康體重管理等相關疑問。
+    民眾對運動如有疑問，可參考國民健康局肥胖防治網-「快樂動」(http://obesity.bhp.gov.tw)，亦可撥打免費市話健康體重管理電話諮詢服務，諮詢專線「0800-367-100（0800-瘦落去-要動動）」，也可利用國民健康局局網首頁或肥胖防治網問題諮詢專區的網路電話撥入功能，向客服人員諮詢關於運動、健康飲食及健康體重管理等相關疑問。            
         </pre>
     </div>
     <div class="post" id='post2'>
@@ -76,8 +87,7 @@
 第三十二條　　違反本法規定，經依第二十三條至前條規定處罰者，得併公告被處分人及其違法情形。
 第三十三條　　本法所定罰則，除第二十五條規定由中央主管機關處罰外，由直轄市、縣（市）主管機關處罰之。
 
-
-        </pre>
+</pre>
     </div>
     <div class="post" id='post3'>
         <h2>癌症防治</h2>
@@ -99,8 +109,7 @@
 資料來源：行政院衛生署衛生報導139期
 上稿日期：2010/1/20
 
-        </pre>
-
+</pre>
     </div>
     <div class="post" id='post4'>
         <h2>慢性病防治</h2>
@@ -126,8 +135,16 @@
 2、注意個人衛生：如多淋浴少盆浴、女生在如廁後記得由前往後擦、性行為前後（不論男女）應注意會陰部、肛門口及尿道口的清潔工作。
 3、正常的飲食習慣及充分的休息與睡眠，以增加抵抗力及免疫力。
 4、多注意及控制易引發膀胱炎的疾病：如糖尿病、尿路結石、攝護腺肥大等。
-如果民眾發現自己解尿不舒服時，一定要在第一時間就診，讓醫師採用檢體對症下藥，只要沒有其他的特殊問題併存，同時能接受完整療程的抗生素治療，通常一星期左右即可痊癒。不過服藥的時間及用量絕對要遵照醫師囑咐，如果自行隨意停藥或不按時服用，很可能會造成殘存的細菌出現抗藥性，非但原本的症狀無法痊癒，還可能帶來慢性泌尿道發炎、尿路結石、腎臟功能受損等併發症，千萬要特別注意。
-        </pre>
-
+如果民眾發現自己解尿不舒服時，一定要在第一時間就診，讓醫師採用檢體對症下藥，只要沒有其他的特殊問題併存，同時能接受完整療程的抗生素治療，通常一星期左右即可痊癒。不過服藥的時間及用量絕對要遵照醫師囑咐，如果自行隨意停藥或不按時服用，很可能會造成殘存的細菌出現抗藥性，非但原本的症狀無法痊癒，還可能帶來慢性泌尿道發炎、尿路結石、腎臟功能受損等併發症，千萬要特別注意。        
+    </pre>
     </div>
 </div>
+<script>
+    $(".tab").on("click", function() {
+        $(".tab").removeClass("active");
+        $(this).addClass("active");
+        let post = $(this).attr('id').replace('tab', 'post');
+        $(".post").removeClass("active");
+        $("#" + post).addClass("active");
+    })
+</script>
