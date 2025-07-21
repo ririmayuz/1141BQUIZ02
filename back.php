@@ -47,10 +47,10 @@
 								echo "<br>";
 								echo "<button>管理</button>";
 								echo "|";
-								echo "<button>登出</button>";
+								echo "<button onclick=\"location.href='./api/logout.php'\">登出</button>";
 							} else {
 								echo "歡迎，" . $_SESSION['login'];
-								echo "<button>登出</button>";
+								echo "<button onclick=location.href='./api/logout.php'>登出</button>";
 							}
 						} else {
 
